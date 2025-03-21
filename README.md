@@ -71,7 +71,7 @@ PapeBot/
 ### 1️⃣ Clone the Project
 
 ```sh
-git clone git@github.com:YOUR-USERNAME/YOUR-REPO.git
+git clone git@github.com:notelyoo/PapeBot.git
 cd PapeBot
 ```
 
