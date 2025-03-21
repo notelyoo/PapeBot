@@ -147,7 +147,7 @@ This project is licensed under the **MIT License**.
 
 ## 💬 Contact
 
-📧 Email: your-email@example.com  
+📧 Email: contact@miyeon.fr  
 🐦 Twitter: [@NotElyoo](https://twitter.com/NotElyoo)  
 📷 Twitch: [@NotElyoo](https://twitch.tv/NotElyoo)  
 📷 Twitch: [@PapeSan](https://twitch.tv/PapeSan)  
