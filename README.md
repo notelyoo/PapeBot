@@ -94,8 +94,8 @@ TWITCH_CLIENT_ID=your-twitch-client-id
 TWITCH_CLIENT_SECRET=your-twitch-client-secret
 ```
 
-⚠ **Important:** Never commit this `.env` file to GitHub!
-You can use [Twitch Token Generator]([https://twitter.com/NotElyoo](https://twitchtokengenerator.com/)) to create your token et choose your scopes
+⚠ **Important:** Never commit this `.env` file to GitHub!  
+You can use [Twitch Token Generator]([https://twitter.com/NotElyoo](https://twitchtokengenerator.com/) to create your token et choose your scopes
 
 ### 4️⃣ Run the Bot
 
