@@ -1,8 +1,13 @@
+/**
+  📁 File: unbanUser.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const axios = require('axios');
 const getUserIdFromTwitch = require('./getUserIdFromTwitch');
 const getModeratorId = require('./getModeratorId');
 
-// Fonction pour débannir un utilisateur
 async function unbanUser(channelName, targetUser) {
     try {
         const broadcasterId = await getUserIdFromTwitch(channelName);

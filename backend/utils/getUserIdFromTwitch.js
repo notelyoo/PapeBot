@@ -1,6 +1,11 @@
+/**
+  📁 File: getUserIdFromTwitch.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const axios = require('axios');
 
-// Récupérer l'ID d'un utilisateur Twitch
 async function getUserIdFromTwitch(username) {
     try {
         const response = await axios.get('https://api.twitch.tv/helix/users', {

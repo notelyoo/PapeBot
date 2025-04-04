@@ -1,3 +1,9 @@
+/**
+  📁 File: clips.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const createClip = require('../utils/createClip');
 const createEmbed = require('../utils/createEmbed');
 

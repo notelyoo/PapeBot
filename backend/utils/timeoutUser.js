@@ -1,12 +1,16 @@
+/**
+  📁 File: timeoutUser.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const axios = require('axios');
 const getUserIdFromTwitch = require('./getUserIdFromTwitch');
 const getModeratorId = require('./getModeratorId');
 
-// Fonction pour appliquer un timeout à un utilisateur sur Twitch
 async function timeoutUser(channelName, targetUser, duration, reason) {
     try {
-        // Vérifier si la durée est valide (doit être positive et non nulle)
-        if (duration <= 0 || duration > 1209600) { // La durée doit être entre 1 et 2 semaines
+        if (duration <= 0 || duration > 1209600) {
             console.error('❌ Durée de timeout invalide.');
             return false;
         }

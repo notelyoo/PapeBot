@@ -1,3 +1,9 @@
+/**
+  📁 File: ban.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const banUser = require('../utils/banUser');
 const createEmbed = require('../utils/createEmbed');
 

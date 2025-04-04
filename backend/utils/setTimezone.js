@@ -1,3 +1,9 @@
+/**
+  📁 File: setTimezone.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const fs = require('fs');
 const path = require('path');
 

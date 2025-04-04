@@ -1,3 +1,9 @@
+/**
+  📁 File: timeout.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const createEmbed = require('../utils/createEmbed');
 const timeoutUser = require('../utils/timeoutUser');
 

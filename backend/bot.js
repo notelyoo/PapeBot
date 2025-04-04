@@ -1,3 +1,9 @@
+/**
+  📁 File: bot.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const { Client, GatewayIntentBits, SlashCommandBuilder } = require('discord.js');
 require('dotenv').config();
 const fs = require('fs');
@@ -38,7 +44,6 @@ console.log("\n====================================");
 console.log("🚀 DÉMARRAGE DU BOT DISCORD...");
 console.log("====================================\n");
 
-// Initialisation du client Discord
 const discordClient = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -47,7 +52,6 @@ const discordClient = new Client({
     ]
 });
 
-// Chargement des commandes
 console.log("📁 Chargement des commandes...");
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -66,11 +70,9 @@ const commandModules = commandFiles.map(file => {
     }
 }).filter(Boolean);
 
-// Démarrage du bot
 discordClient.once('ready', async () => {
     console.log(`\n✅ Connecté en tant que ${discordClient.user.tag}`);
     
-    // Enregistrement des commandes Slash
     try {
         console.log("🔄 Enregistrement des commandes Slash...");
         const slashCommands = commandModules.map(commandModule => {
@@ -105,11 +107,9 @@ discordClient.once('ready', async () => {
         console.error("❌ Erreur lors de l'enregistrement des commandes Slash :", error);
     }
 
-    // Test des services externes
     console.log("\n🔍 Vérification des services externes...");
 
     try {
-        // Exemple : Vérification de l'API Twitch
         const twitchClientId = process.env.TWITCH_CLIENT_ID;
         const twitchOAuth = process.env.TWITCH_OAUTH_TOKEN;
         
@@ -119,7 +119,6 @@ discordClient.once('ready', async () => {
             console.log("✅ Connexion API Twitch : Clés trouvées.");
         }
 
-        // Tu peux ajouter d'autres vérifications ici (ex: connexion à une base de données)
     } catch (error) {
         console.error("❌ Erreur lors de la vérification des services externes :", error);
     }
@@ -127,7 +126,6 @@ discordClient.once('ready', async () => {
     console.log("\n🚀 BOT OPÉRATIONNEL !\n====================================\n");
 });
 
-// Gestion des interactions avec les commandes
 discordClient.on('interactionCreate', async (interaction) => {
     if (!interaction.isChatInputCommand()) return;
 

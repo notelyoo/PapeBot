@@ -1,8 +1,13 @@
+/**
+  📁 File: banUser.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const axios = require('axios');
 const getUserIdFromTwitch = require('./getUserIdFromTwitch');
 const getModeratorId = require('./getModeratorId');
 
-// Fonction pour bannir un utilisateur
 async function banUser(channelName, targetUser, reason) {
     try {
         const broadcasterId = await getUserIdFromTwitch(channelName);

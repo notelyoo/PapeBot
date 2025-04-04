@@ -1,3 +1,9 @@
+/**
+  📁 File: sendMessage.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const axios = require('axios');
 const getUserIdFromTwitch = require('./getUserIdFromTwitch');
 const getModeratorId = require('./getModeratorId');
@@ -9,7 +15,6 @@ async function sendMessage(channel, message) {
         if (!broadcasterId) throw new Error('Chaine ou utilisateur introuvable');
         if (!moderatorId) throw new Error('Modérateur introuvable');
 
-        // Envoie du message via l'API Twitch
         const response = await axios.post('https://api.twitch.tv/helix/chat/announcements', {
             broadcaster_id: broadcasterId,
             moderator_id: moderatorId,

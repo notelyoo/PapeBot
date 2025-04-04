@@ -1,8 +1,13 @@
+/**
+  📁 File: warnUser.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const axios = require('axios');
 const getUserIdFromTwitch = require('./getUserIdFromTwitch');
 const getModeratorId = require('./getModeratorId');
 
-// Fonction pour avertir un utilisateur
 async function warnUser(channelName, targetUser, reason) {
     try {
         const broadcasterId = await getUserIdFromTwitch(channelName);

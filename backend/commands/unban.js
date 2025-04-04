@@ -1,3 +1,9 @@
+/**
+  📁 File: unban.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const createEmbed = require('../utils/createEmbed');
 const unbanUser = require('../utils/unbanUser');
 

@@ -1,3 +1,9 @@
+/**
+  📁 File: warn.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const warnUser = require('../utils/warnUser');
 const createEmbed = require('../utils/createEmbed');
 

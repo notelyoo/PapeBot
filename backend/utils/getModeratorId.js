@@ -1,6 +1,11 @@
+/**
+  📁 File: getModeratorId.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const axios = require('axios');
 
-// Récupérer l'ID du modérateur (compte qui possède le token OAuth)
 async function getModeratorId() {
     try {
         const response = await axios.get('https://api.twitch.tv/helix/users', {

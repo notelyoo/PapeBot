@@ -1,3 +1,9 @@
+/**
+  📁 File: user.js
+  🧑‍💻 Developed by: Elyoo (NotElyoo)
+  📬 Contact: contact@miyeon.fr
+ */
+
 const axios = require('axios');
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle, ComponentType } = require('discord.js');
 const getUserIdFromTwitch = require('../utils/getUserIdFromTwitch');
@@ -59,12 +65,12 @@ module.exports = {
                 color: embedColor,
                 author: {
                     name: twitchUser.display_name,
-                    url: `https://www.twitch.tv/${twitchUser.login}`, // Lien cliquable vers la chaîne
-                    icon_url: twitchUser.profile_image_url // Photo de profil en haut à droite
+                    url: `https://www.twitch.tv/${twitchUser.login}`,
+                    icon_url: twitchUser.profile_image_url
                 },
                 title: `${twitchUser.display_name} - Profil Twitch`,
                 thumbnail: {
-                    url: twitchUser.profile_image_url // Mini photo de profil
+                    url: twitchUser.profile_image_url
                 },
                 fields: [
                     { name: "🔹 Nom d'affichage", value: twitchUser.display_name, inline: true },
