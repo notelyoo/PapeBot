@@ -17,8 +17,8 @@ module.exports = {
         if (clipUrl) {
             embed = createEmbed('🎬 Clip Créé', `[Clique ici pour éditer ton clip](${clipUrl})`, 0x9146FF);
         } else {
-            embed = createEmbed('⚠️ Impossible de créer le clip', "Le live doit être en cours pour créer un clip.", 0xFF0000);
-        }
+            embed = createEmbed('⚠️ Erreur', "Impossible de créer le clip. Vérifie que le live est bien en cours **et que le bot a le droit de créer des clips (`clips:edit`)**.", 0xFF0000);
+        }        
         await interaction.reply({ embeds: [embed] });
     }
 };

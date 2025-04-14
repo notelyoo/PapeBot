@@ -6,6 +6,8 @@
 
 const sendMessage = require('../utils/sendMessage');
 const createEmbed = require('../utils/createEmbed');
+const { activeAnnouncements } = require('./liste');
+const { isLive } = require('../utils/liveWatcher');
 
 let shouldContinueToSendMessages = true;
 
@@ -29,24 +31,23 @@ module.exports = {
     run: async (interaction) => {
         const message = interaction.options.getString('message');
         const interval = interaction.options.getInteger('interval');
-
         let embed = null;
 
         if (interval) {
-            let intervalMilliseconds = interval * 60 * 1000;
+            const intervalMs = interval * 60 * 1000;
+            const id = `${Date.now()}`;
 
-            const intervalID = setInterval(async () => {
-                if (!shouldContinueToSendMessages) {
-                    clearInterval(intervalID);
-                    return;
-                }
-                await sendMessage(process.env.TWITCH_CHANNEL, message);
-            }, intervalMilliseconds);
+            activeAnnouncements.set(id, {
+                message,
+                interval,
+                intervalID: null,
+                active: false
+            });
 
-            embed = createEmbed('✅ Annonce Périodique', `Le message sera annoncé toutes les ${interval} minutes: **${message}**`, 0x00FF00);
+            embed = createEmbed('⏱️ Annonce programmée', `Le message sera annoncé toutes les ${interval} minutes (quand le live sera en ligne) :\n**${message}**`, 0x00FF00);
         } else {
             if (await sendMessage(process.env.TWITCH_CHANNEL, message)) {
-                embed = createEmbed('✅ Annonce', `Le message a été annoncé: **${message}**`, 0x00FF00);
+                embed = createEmbed('✅ Annonce', `Le message a été annoncé : **${message}**`, 0x00FF00);
             } else {
                 embed = createEmbed('⚠️ Erreur', 'Échec de l\'annonce du message.', 0xFF0000);
             }
@@ -55,7 +56,3 @@ module.exports = {
         await interaction.reply({ embeds: [embed] });
     }
 };
-
-function stopPeriodicMessages() {
-    shouldContinueToSendMessages = false;
-}
